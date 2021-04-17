@@ -25,7 +25,7 @@ public class MovieCatalogController {
         UserRating userRating = restTemplate.getForObject("http://ratings-data-service/rating/users/"+userId, UserRating.class);
 
         List<Movie> userMovies = userRating.getUserRatings().stream()
-                .map(rating -> restTemplate.getForObject("http://movie-info-service/movies/"+rating.getMovieId(), Movie.class))
+                .map(rating -> restTemplate.getForObject("https://api.themoviedb.org/3/movie/100?api_key=d5ab38ce0f8ef28f1ec44023ad3cfce6", Movie.class))
                 .collect(Collectors.toList());
         return new CatalogItem(userId, userMovies);
     }
