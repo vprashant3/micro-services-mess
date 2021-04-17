@@ -1,14 +1,13 @@
 package com.prashant.moviecatalogservice.models;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.util.List;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-public class CatalogItem {
-    private String userId;
-    private List<Movie> userMovies;
+@NoArgsConstructor
+public class Rating {
+    public String movieId;
+    public int rating;
 }
